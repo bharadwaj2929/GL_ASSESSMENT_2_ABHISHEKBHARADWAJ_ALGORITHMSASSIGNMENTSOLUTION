@@ -1,0 +1,64 @@
+Find the time complexity of the below functions in Θ form. Write NA if the function does not apply to any case.
+	(Hint: Use Master's Theorem to solve these time_complexity functions in Θ form in its general relation with its test-cases).  
+
+
+	e)  T(n) = 7T(n/3)+n^2 .
+		The general equation  of Master's Theorem is, T(n) = aT(n/b)+Θ(n^k log^p n).
+		Here;  a=7,b=3,k=2,p=0 .
+
+		Now compare a & b^k . Therefore,  here a<b^k .i.e.;  7<3^2 .
+		
+		We've condition here that's if a<b^k ,
+			(1) if p>=0,then T(n) = Θ(n^k log^p n).
+			(2) if p<0,then T(n) =  O(n^k).
+
+		Here, p=0 .So apply case (1).
+			Therefore,  T(n) = Θ(n^k log^p n).
+			T(n) = Θ(n^2 log^0 n) = Θ(n^2).
+
+		Therefore,   T(n) =  Θ(n^2).
+ 		
+
+
+	a) T(n) = 3T(n/2)+n .
+		The general equation  of Master's Theorem is, T(n) = aT(n/b)+Θ(n^k log^p n).
+		Here;   a=3,b=2,k=1,p=0 .
+
+		Now compare a & b^k . Therefore,  here a>b^k .i.e.; 3>2^1 .
+		
+		We've condition here that's if a>b^k ,then T(n) = Θ(n^logb  a).
+		
+		Therefore,  T(n) = Θ(n^log2  3).
+
+	
+
+	b) T(n) = 64T(n/8) − n^2(log n).
+
+		Here, the time_complexity of this function in Θ form doesn't apply to any case . So, T(n) = NA.
+
+		As T(n) = aT(n/b)+Θ(n^k log^p n) .So here minus operator appears which isn't equal to general equation of Master's Theorem.
+		Therefore, T(n) = NA.
+
+
+	
+	c) T(n) = 2nT(n/2)+n^n.
+		The general equation  of Master's Theorem is, T(n) = aT(n/b)+Θ(n^k log^p n).
+		Since, here a=2n(a must be a constant here) but it doesn't satisfies the general equation of Master's Theorem.As "a" here isn't a 
+		constant stuff. So therefore, T(n) = NA.
+
+
+	d) T(n) = 3T(n/3)+n/2.
+		The general equation  of Master's Theorem is, T(n) = aT(n/b)+Θ(n^k log^p n).
+		Here;  a=3,b=3,k=1,p=0.
+		
+		Now compare a & b^k . Therefore,  here a=b^k .i.e.; 3=3.
+		We've condition here that's if  a=b^k,then
+			(1) if p>−1,then T(n) = Θ(n^logb a  log^p+1  n).
+			(2) if p=−1,then T(n) = Θ(n^logb a  loglog n).
+			(3) if p<−1,then T(n) = Θ(n^logb a).
+		
+		Therefore  as p=0 .Then, we apply case-(1) here.So,then
+
+		T(n) = Θ(n^logb a  log^p+1  n).
+		T(n) = Θ(n^log3 3 log^0+1 n) = Θ(n logn).As log3 3=1 & log^0+1 n = log^1 n = logn.
+		So then here therefore, T(n) =	Θ(nlogn).	
